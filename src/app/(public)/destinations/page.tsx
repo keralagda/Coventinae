@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Compass, Clock, Sunrise, Waves, ArrowRight } from "lucide-react";
+import { Compass, Clock, Sunrise, Waves, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const routes = [
@@ -32,94 +32,111 @@ const routes = [
 
 export default function DestinationsPage() {
   return (
-    <div className="bg-[#03090F] text-white">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <div className="bg-porcelain min-h-screen">
+      {/* Hero Section - Luxury Breadcrumb Style */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-ink-black">
         <Image 
           src="/images/beed2.jpg" 
           alt="Kerala Backwater Destinations" 
           fill 
-          className="object-cover opacity-30 brightness-75"
+          className="object-cover opacity-40 grayscale-[0.3] brightness-75 transition-transform duration-1000 hover:scale-110"
           priority
         />
-        <div className="absolute inset-0 bg-[#03090F]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-black/60 to-porcelain/20" />
         
-        <div className="relative z-10 text-center space-y-6 px-6 max-w-4xl">
-          <span className="text-[#C5A059] uppercase tracking-[0.4em] text-xs font-bold bg-white/5 py-2 px-4 rounded-full backdrop-blur-md">Explore Kerala</span>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold">Enchanting Routes</h1>
-          <p className="text-white/60 text-lg leading-relaxed">
-            From the expansive Vembanad Lake to the intimate canals of Alleppey, discover the diverse beauty of the backwaters.
-          </p>
+        <div className="relative z-10 text-center space-y-4 px-6 max-w-4xl animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 text-golden-bronze border border-golden-bronze/30 px-4 py-1 rounded-full text-[10px] uppercase tracking-[0.3em] font-bold backdrop-blur-sm">
+            Curated Journeys
+          </div>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white tracking-tight">
+            Enchanting <span className="text-golden-bronze italic">Routes</span>
+          </h1>
+          <div className="h-0.5 w-24 bg-golden-bronze mx-auto mt-4" />
         </div>
       </section>
 
-      {/* Routes Section */}
-      <section className="py-24 container mx-auto px-6">
-        <div className="space-y-32">
+      {/* Intro Section */}
+      <section className="py-20 container mx-auto px-6 text-center max-w-3xl">
+        <p className="text-ink-black/60 text-lg md:text-xl font-light leading-relaxed font-serif italic">
+          &quot;From the expansive Vembanad Lake to the intimate canals of Alleppey, discover a tapestry of natural wonders woven through the silent waters of Kerala.&quot;
+        </p>
+      </section>
+
+      {/* Routes Section - Alternating Layouts */}
+      <section className="pb-32 container mx-auto px-6 max-w-7xl">
+        <div className="space-y-40">
           {routes.map((route, index) => (
             <div 
               key={route.title} 
-              className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 items-start`}
+              className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}
             >
-              {/* Image with Decorative Element */}
-              <div className="w-full lg:w-1/2 relative">
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden relative z-10">
+              {/* Image Container - Fixed Overflow Issues */}
+              <div className="w-full lg:w-[55%] relative group">
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden relative shadow-2xl transition-all duration-500 group-hover:shadow-golden-bronze/10">
                   <Image 
                     src={route.image} 
                     alt={route.title} 
                     fill 
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                </div>
-                <div className="absolute -top-6 -left-6 w-full h-full border border-[#C5A059]/20 rounded-3xl z-0" />
-                <div className="absolute -bottom-10 -right-10 hidden lg:block">
-                  <div className="bg-[#004D40] p-8 rounded-2xl shadow-2xl border border-white/5 space-y-2">
-                    <p className="text-[#C5A059] font-bold uppercase tracking-widest text-xs">Vibe</p>
-                    <p className="text-xl font-serif italic">{route.vibe}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="w-full lg:w-1/2 space-y-8 lg:pt-8">
-                <div className="inline-flex items-center gap-2 text-[#C5A059] bg-[#C5A059]/10 px-4 py-2 rounded-full text-sm font-semibold">
-                  <MapPin className="h-4 w-4" />
-                  Route {index + 1}
+                  <div className="absolute inset-0 bg-ink-black/10 group-hover:bg-transparent transition-colors" />
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl font-serif font-bold">{route.title}</h2>
-                <p className="text-white/60 text-lg leading-relaxed">
+                {/* Float Vibe Label - Container Bound */}
+                <div className="absolute -bottom-6 -right-4 lg:right-4 z-20">
+                  <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-xl shadow-xl border border-porcelain/50">
+                    <p className="text-golden-bronze font-bold uppercase tracking-widest text-[10px] mb-1">Vibe</p>
+                    <p className="text-ink-black font-serif italic text-lg">{route.vibe}</p>
+                  </div>
+                </div>
+
+                {/* Decorative border - Container Bound */}
+                <div className="absolute top-4 left-4 -right-4 -bottom-4 border border-pine-teal/10 rounded-2xl -z-10 group-hover:border-pine-teal/30 transition-colors" />
+              </div>
+
+              {/* Content Container */}
+              <div className="w-full lg:w-[45%] space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-px w-8 bg-golden-bronze" />
+                  <span className="text-golden-bronze uppercase tracking-[0.2em] text-xs font-bold">Route {index + 1}</span>
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl font-serif font-bold text-ink-black leading-tight">
+                  {route.title}
+                </h2>
+                
+                <p className="text-ink-black/70 text-lg leading-relaxed font-light">
                   {route.description}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-[#C5A059]">
-                      <Compass className="h-5 w-5" />
-                      <span className="font-bold uppercase tracking-widest text-xs">Highlights</span>
+                <div className="grid grid-cols-2 gap-8 py-6 border-y border-ink-black/5">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-pine-teal">
+                      <Compass className="h-4 w-4" />
+                      <span className="font-bold uppercase tracking-wider text-[10px]">Highlights</span>
                     </div>
-                    <ul className="space-y-2 text-white/70">
+                    <ul className="space-y-1.5">
                       {route.highlights.map(h => (
-                        <li key={h} className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#C5A059]" />
+                        <li key={h} className="text-ink-black/60 text-sm flex items-center gap-2">
+                          <span className="h-1 w-1 rounded-full bg-golden-bronze" />
                           {h}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-[#C5A059]">
-                      <Clock className="h-5 w-5" />
-                      <span className="font-bold uppercase tracking-widest text-xs">Duration</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-pine-teal">
+                      <Clock className="h-4 w-4" />
+                      <span className="font-bold uppercase tracking-wider text-[10px]">Cruise Time</span>
                     </div>
-                    <p className="text-white/70">{route.duration}</p>
+                    <p className="text-ink-black/60 text-sm">{route.duration}</p>
                   </div>
                 </div>
 
-                <div className="pt-6">
-                  <Button asChild className="bg-transparent border border-white/20 hover:border-[#C5A059] hover:text-[#C5A059] rounded-full px-8 py-6 transition-all group">
-                    <Link href="/contact" className="flex items-center gap-2">
-                      Plan This Route <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <div className="pt-4 flex items-center gap-6">
+                  <Button asChild className="bg-pine-teal hover:bg-pine-teal/90 text-white rounded-full px-8 py-6 h-auto transition-all transform hover:translate-x-1 group">
+                    <Link href="/contact" className="flex items-center gap-3">
+                      Plan My Journey <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
                 </div>
@@ -129,29 +146,49 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      {/* Feature Grid */}
-      <section className="py-24 bg-[#011627] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#C5A059_0%,transparent_50%)]" />
+      {/* Feature Grid - Inverted Section */}
+      <section className="py-24 bg-ink-black relative overflow-hidden text-porcelain">
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+          <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-golden-bronze/20 via-transparent to-pine-teal/20" />
         </div>
         
-        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
-          <div className="space-y-4">
-            <Sunrise className="h-10 w-10 text-[#C5A059]" />
-            <h3 className="text-2xl font-serif font-bold">Sunrise Rituals</h3>
-            <p className="text-white/50">Wake up to the gentle lap of water and witness the golden hour reflection on the lake.</p>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10 grid md:grid-cols-3 gap-16">
+          <div className="space-y-6 text-center group">
+            <div className="h-16 w-16 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-golden-bronze/20 transition-all duration-500 group-hover:bg-golden-bronze group-hover:border-transparent">
+              <Sunrise className="h-7 w-7 text-golden-bronze transition-colors group-hover:text-ink-black" />
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white">Sunrise Rituals</h3>
+            <p className="text-porcelain/50 font-light leading-relaxed">Wake up to the gentle lap of water and witness the golden hour reflection on the silent lake.</p>
           </div>
-          <div className="space-y-4">
-            <Waves className="h-10 w-10 text-[#C5A059]" />
-            <h3 className="text-2xl font-serif font-bold">Hidden Lagoons</h3>
-            <p className="text-white/50">Our captains know the secret spots where you can enjoy complete seclusion and tranquility.</p>
+          
+          <div className="space-y-6 text-center group">
+            <div className="h-16 w-16 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-golden-bronze/20 transition-all duration-500 group-hover:bg-golden-bronze group-hover:border-transparent">
+              <Waves className="h-7 w-7 text-golden-bronze transition-colors group-hover:text-ink-black" />
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white">Hidden Lagoons</h3>
+            <p className="text-porcelain/50 font-light leading-relaxed">Our captains know the secret spots where you can enjoy complete seclusion and tranquility.</p>
           </div>
-          <div className="space-y-4">
-            <Compass className="h-10 w-10 text-[#C5A059]" />
-            <h3 className="text-2xl font-serif font-bold">Expert Navigation</h3>
-            <p className="text-white/50">Safe, smooth, and informative journeys guided by locals who were born on these waters.</p>
+          
+          <div className="space-y-6 text-center group">
+            <div className="h-16 w-16 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-golden-bronze/20 transition-all duration-500 group-hover:bg-golden-bronze group-hover:border-transparent">
+              <Compass className="h-7 w-7 text-golden-bronze transition-colors group-hover:text-ink-black" />
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white">Local Mastery</h3>
+            <p className="text-porcelain/50 font-light leading-relaxed">Safe and informative journeys guided by locals who have navigated these waters for generations.</p>
           </div>
         </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 text-center container mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-serif text-ink-black mb-8">Ready to explore the <span className="italic text-pine-teal font-serif">silent waters</span>?</h2>
+        <Link 
+          href="/houseboats" 
+          className="text-golden-bronze uppercase tracking-[0.3em] font-bold text-sm border-b-2 border-golden-bronze/30 pb-2 hover:border-golden-bronze transition-all"
+        >
+          View Our Fleet
+        </Link>
       </section>
     </div>
   );
