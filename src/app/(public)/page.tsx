@@ -105,10 +105,13 @@ export default function HomePage() {
                              <h3 className="text-xl font-serif font-bold mb-3">{service.title}</h3>
                              <p className="text-sm leading-relaxed opacity-90 mb-8 flex-grow">{service.desc}</p>
                              
-                             <div className="flex items-center text-sm font-bold cursor-pointer group/link uppercase tracking-wider">
+                             <Link 
+                                href={i === 0 ? "/houseboats" : i === 1 ? "/experiences/candle-light-dinner" : "/contact"}
+                                className="flex items-center text-sm font-bold cursor-pointer group/link uppercase tracking-wider"
+                             >
                                 <span className={i === 1 || i === 2 ? "text-golden-bronze" : "text-pine-teal"}>{service.link}</span>
                                 <span className={`ml-2 transition-transform group-hover/link:translate-x-1 ${i === 1 || i === 2 ? "text-golden-bronze" : "text-pine-teal"}`}>→</span>
-                             </div>
+                             </Link>
                          </CardContent>
                      </Card>
                  ))}
@@ -132,7 +135,7 @@ export default function HomePage() {
                         { img: "/images/KottayamTown.jpg", title: "Kottayam Town", loc: "Kottayam" }
                     ].map((item, i) => (
                         <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                            <div className="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer">
+                            <Link href="/destinations" className="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer block">
                                 <Image 
                                     src={item.img} 
                                     alt={item.title} 
@@ -146,7 +149,7 @@ export default function HomePage() {
                                         {item.loc}
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

@@ -3,7 +3,9 @@
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Music, Users, Utensils, Anchor, Camera, Wifi, Sun, Moon } from "lucide-react"
+import Link from "next/link"
+import { Music, Users, Utensils, Anchor, Camera, Wifi, Sun, Moon, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function OfferingsContent() {
   
@@ -37,9 +39,9 @@ export default function OfferingsContent() {
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-4 text-center animate-fade-in-up">
                             <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-wider mb-2">{banner.title}</h1>
                             <p className="text-xl md:text-3xl font-light italic text-white/90">{banner.subtitle}</p>
-                            <button className="mt-8 px-8 py-3 bg-[#1A374D] hover:bg-[#152e40] text-white rounded-full transition-all uppercase tracking-widest font-semibold text-sm">
-                                Discover Now
-                            </button>
+                            <Button asChild className="mt-8 px-8 py-6 bg-golden-bronze hover:bg-golden-bronze/90 text-ink-black rounded-full transition-all uppercase tracking-widest font-extrabold text-sm shadow-xl">
+                                <Link href="/experiences/corporate-events">Discover Now</Link>
+                            </Button>
                         </div>
                     </CarouselItem>
                 ))}
@@ -95,7 +97,13 @@ export default function OfferingsContent() {
                             <Wifi className="h-6 w-6 text-[#1A374D] shrink-0" />
                             <span><strong>Add-Ons:</strong> Wi-Fi, Projector, Photography.</span>
                         </li>
-                    </ul>
+                    <div className="pt-4">
+                        <Button asChild variant="outline" className="border-pine-teal text-pine-teal hover:bg-pine-teal hover:text-white rounded-full group">
+                            <Link href="/experiences/corporate-events" className="flex items-center gap-2">
+                                Explore Corporate Events <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,12 +131,18 @@ export default function OfferingsContent() {
                      </div>
 
                      <div className="space-y-4">
-                        <h3 className="text-xl font-bold border-b border-white/20 pb-2">Experiences</h3>
-                        <ul className="space-y-2 text-white/80">
-                            <li className="flex items-center gap-2"><Anchor className="h-4 w-4"/> Storytelling about Kerala’s heritage.</li>
-                            <li className="flex items-center gap-2"><Music className="h-4 w-4"/> Cultural dance performances.</li>
-                            <li className="flex items-center gap-2"><Camera className="h-4 w-4"/> Photography & themed menus.</li>
+                        <ul className="space-y-4 text-white/80">
+                            <li className="flex items-center gap-3"><Anchor className="h-5 w-5 text-golden-bronze"/> Storytelling about Kerala’s heritage.</li>
+                            <li className="flex items-center gap-3"><Music className="h-5 w-5 text-golden-bronze"/> Cultural dance performances.</li>
+                            <li className="flex items-center gap-3"><Camera className="h-5 w-5 text-golden-bronze"/> Photography & themed menus.</li>
                         </ul>
+                        <div className="pt-4">
+                            <Button asChild className="bg-golden-bronze text-ink-black hover:bg-white rounded-full font-bold group">
+                                <Link href="/experiences/candle-light-dinner" className="flex items-center gap-2">
+                                    Book Romantic Dinner <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </Link>
+                            </Button>
+                        </div>
                      </div>
                 </div>
                 <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
@@ -165,8 +179,15 @@ export default function OfferingsContent() {
                             <h5 className="font-bold text-[#1A374D]">Magic</h5>
                             <p className="text-sm text-gray-600">Sunset cruise photoshoots & Flower showers.</p>
                          </div>
-                    </div>
                 </div>
+                <div className="pt-4">
+                    <Button asChild className="bg-pine-teal text-white hover:bg-golden-bronze hover:text-ink-black rounded-full px-8 group font-bold">
+                        <Link href="/experiences/wedding-cruises" className="flex items-center gap-2">
+                            View Wedding Packages <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                    </Button>
+                </div>
+            </div>
                  <div>
                      <Carousel className="w-full rounded-2xl overflow-hidden shadow-2xl">
                         <CarouselContent>
@@ -249,9 +270,11 @@ export default function OfferingsContent() {
                             <span><strong>Culture:</strong> Short films about Kerala’s traditions.</span>
                         </li>
                      </ul>
-                     <button className="bg-[#2C5F2D] text-white px-8 py-3 rounded-full hover:bg-[#1e441f] transition-colors font-medium shadow-lg hover:shadow-xl translate-y-0 hover:-translate-y-1">
-                        Book Your Tour
-                     </button>
+                     <Button asChild className="bg-[#2C5F2D] text-white px-8 py-6 rounded-full hover:bg-[#1e441f] transition-all font-bold shadow-lg hover:shadow-xl group">
+                        <Link href="/experiences/day-cruises" className="flex items-center gap-2">
+                            Explore Day Cruises <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                     </Button>
                 </div>
             </div>
         </div>
