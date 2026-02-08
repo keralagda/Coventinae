@@ -11,7 +11,8 @@ import {
   FileText,
   Megaphone,
   Search,
-  LogOut
+  LogOut,
+  HardDrive
 } from "lucide-react"
 
 const sidebarNavItems = [
@@ -24,6 +25,11 @@ const sidebarNavItems = [
     title: "Consultations",
     href: "/admin/consultations",
     icon: FileText,
+  },
+  {
+    title: "Media Gallery",
+    href: "/admin/media",
+    icon: HardDrive,
   },
   {
     title: "Content Studio",

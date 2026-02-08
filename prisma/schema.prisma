@@ -114,3 +114,18 @@ model Consultation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Media {
+  id        String   @id @default(cuid())
+  url       String
+  publicId  String   @unique
+  fileName  String?
+  fileSize  Int?
+  format    String?
+  width     Int?
+  height    Int?
+  type      String?  // image, video
+  folder    String?  @default("website")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
