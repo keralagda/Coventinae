@@ -1,13 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
     { title: "Home", href: "/" },
@@ -39,30 +34,9 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Nav */}
-        <div className="lg:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-[#1A374D] border-none text-white w-[300px]">
-              <div className="flex flex-col gap-6 mt-10">
-                {navLinks.map((link, i) => (
-                  <Link 
-                    key={i} 
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    target={link.external ? "_blank" : "_self"}
-                    className="text-lg font-medium hover:text-[#6998AB] transition-colors"
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+        {/* Mobile Nav - Hidden (Replaced by ModularNav) */}
+        <div className="lg:hidden pointer-events-none opacity-0 select-none">
+          {/* Legacy menu hidden to prioritize modular app-like nav */}
         </div>
       </div>
     </nav>
