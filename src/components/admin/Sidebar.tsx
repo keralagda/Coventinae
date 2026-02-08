@@ -22,6 +22,11 @@ const sidebarNavItems = [
     icon: LayoutDashboard,
   },
   {
+    title: "Consultations",
+    href: "/admin/consultations",
+    icon: FileText,
+  },
+  {
     title: "Content Studio",
     href: "/admin/content",
     icon: FileText,

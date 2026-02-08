@@ -9,13 +9,13 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const { type, prompt, topic } = await req.json()
+    const { type, prompt, topic, provider } = await req.json()
 
     if (type === "text") {
-        const text = await generateText(prompt)
+        const text = await generateText(prompt, provider)
         return NextResponse.json({ result: text })
     } else if (type === "keywords") {
-        const keywords = await generateSEOKeywords(topic)
+        const keywords = await generateSEOKeywords(topic, provider)
         return NextResponse.json({ result: keywords })
     }
 

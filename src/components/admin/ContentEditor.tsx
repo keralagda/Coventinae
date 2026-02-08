@@ -8,12 +8,21 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label"
 import { Loader2, Sparkles } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { AIProvider } from "@/lib/ai"
 
 export function ContentEditor() {
   const [topic, setTopic] = useState("")
   const [generatedContent, setGeneratedContent] = useState("")
   const [loading, setLoading] = useState(false)
   const [keywords, setKeywords] = useState<string[]>([])
+  const [provider, setProvider] = useState<AIProvider>("openai")
 
   const handleGenerate = async () => {
     if (!topic) return
@@ -22,7 +31,7 @@ export function ContentEditor() {
       // 1. Generate Keywords
       const kwRes = await fetch("/api/ai/generate", {
         method: "POST",
-        body: JSON.stringify({ type: "keywords", topic }),
+        body: JSON.stringify({ type: "keywords", topic, provider }),
       })
       const kwData = await kwRes.json()
       if (kwData.result) setKeywords(kwData.result)
@@ -31,7 +40,7 @@ export function ContentEditor() {
       const prompt = `Write a comprehensive, SEO-optimized blog post about "${topic}". Use the following keywords: ${kwData.result?.join(", ")}. Format in Markdown.`
       const textRes = await fetch("/api/ai/generate", {
         method: "POST",
-        body: JSON.stringify({ type: "text", prompt }),
+        body: JSON.stringify({ type: "text", prompt, provider }),
       })
       const textData = await textRes.json()
       if (textData.result) setGeneratedContent(textData.result)
@@ -52,19 +61,36 @@ export function ContentEditor() {
                 <CardDescription>Enter a topic to generate an SEO-optimized article.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-                <div className="space-y-2">
-                    <Label htmlFor="topic">Topic</Label>
-                    <div className="flex gap-2">
-                        <Input 
-                            id="topic" 
-                            placeholder="e.g., Luxury Houseboat Experiences in Kerala" 
-                            value={topic}
-                            onChange={(e) => setTopic(e.target.value)}
-                        />
-                        <Button onClick={handleGenerate} disabled={loading}>
-                            {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-                            Generate
-                        </Button>
+                <div className="space-y-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="w-full sm:w-48">
+                            <Label htmlFor="provider">AI Provider</Label>
+                            <Select value={provider} onValueChange={(val: AIProvider) => setProvider(val)}>
+                                <SelectTrigger id="provider">
+                                    <SelectValue placeholder="Select Provider" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="openai">OpenAI (GPT-4)</SelectItem>
+                                    <SelectItem value="cerebras">Cerebras (Llama 3.1)</SelectItem>
+                                    <SelectItem value="mistral">Mistral (Large)</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                        <div className="flex-1 space-y-2">
+                            <Label htmlFor="topic">Topic</Label>
+                            <div className="flex gap-2">
+                                <Input 
+                                    id="topic" 
+                                    placeholder="e.g., Luxury Houseboat Experiences in Kerala" 
+                                    value={topic}
+                                    onChange={(e) => setTopic(e.target.value)}
+                                />
+                                <Button onClick={handleGenerate} disabled={loading}>
+                                    {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
+                                    Generate
+                                </Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
