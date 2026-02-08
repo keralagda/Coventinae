@@ -9,12 +9,12 @@ export default function AboutContent() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-[#1A374D]">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-pine-teal">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="container relative z-20 text-center text-white px-4 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in-up">About Us</h1>
           <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed">
-            "Experience the best houseboat in Kerala with Coventina Houseboat. Enjoy luxury stays, serene backwaters, authentic cuisine, and unforgettable moments."
+            &quot;Experience the best houseboat in Kerala with Coventina Houseboat. Enjoy luxury stays, serene backwaters, authentic cuisine, and unforgettable moments.&quot;
           </p>
         </div>
       </section>
@@ -51,8 +51,8 @@ export default function AboutContent() {
 
             {/* Text */}
             <div className="order-1 lg:order-2 space-y-6">
-               <h2 className="text-4xl font-serif font-bold text-[#1A374D]">About Us</h2>
-               <h3 className="text-xl font-bold text-[#006994]">Coventina Houseboat – The Best Houseboat in Kerala</h3>
+               <h2 className="text-4xl font-serif font-bold text-pine-teal">About Us</h2>
+               <h3 className="text-xl font-bold text-golden-bronze uppercase tracking-wider">Coventina Houseboat – The Best Houseboat in Kerala</h3>
                <p className="text-gray-600 leading-relaxed text-justify">
                   Welcome aboard Coventina Houseboat, your gateway to the serene backwaters of Kerala. 
                   Renowned as the best houseboat in Kerala, we offer a perfect blend of traditional charm 
@@ -60,12 +60,12 @@ export default function AboutContent() {
                </p>
                
                <div className="space-y-4">
-                  <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-[#1A374D]">
-                      <h4 className="font-bold text-[#1A374D] mb-1">Unmatched Experience</h4>
+                  <div className="p-4 bg-porcelain rounded-lg border-l-4 border-pine-teal">
+                      <h4 className="font-bold text-pine-teal mb-1">Unmatched Experience</h4>
                       <p className="text-sm text-gray-600">Designed to capture the soul of Kerala with elegant interiors and soothing rhythms of the backwaters.</p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-[#006994]">
-                      <h4 className="font-bold text-[#006994] mb-1">Warm Hospitality</h4>
+                  <div className="p-4 bg-porcelain rounded-lg border-l-4 border-golden-bronze">
+                      <h4 className="font-bold text-golden-bronze mb-1">Warm Hospitality</h4>
                       <p className="text-sm text-gray-600">Dedicated crew taking care of every detail, from safety to authentic local experiences.</p>
                   </div>
                </div>
@@ -75,18 +75,18 @@ export default function AboutContent() {
       </section>
 
       {/* Cuisine Section */}
-      <section className="py-20 bg-[#F3F4F6]">
+      <section className="py-20 bg-porcelain">
          <div className="container mx-auto px-6 text-center max-w-4xl">
              <div className="mb-8 flex justify-center">
                  <div className="h-16 w-16 bg-white rounded-full flex items-center justify-center shadow-md">
-                     <Utensils className="h-8 w-8 text-[#1A374D]" />
+                     <Utensils className="h-8 w-8 text-pine-teal" />
                  </div>
              </div>
-             <h2 className="text-4xl font-serif font-bold text-[#1A374D] mb-6">Food and Cuisine</h2>
+             <h2 className="text-4xl font-serif font-bold text-pine-teal mb-6">Food and Cuisine</h2>
              <p className="text-xl text-gray-700 leading-relaxed">
-               "And when it comes to food, we take you on a culinary voyage across India — from the rich spices of the
+               &quot;And when it comes to food, we take you on a culinary voyage across India — from the rich spices of the
                 North to the tangy delights of the South. Every meal is a celebration of India’s diverse cuisine, 
-                freshly prepared onboard by our expert chefs."
+                freshly prepared onboard by our expert chefs.&quot;
              </p>
          </div>
       </section>

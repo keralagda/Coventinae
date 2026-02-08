@@ -69,17 +69,17 @@ export default function OfferingsContent() {
                      </Carousel>
                 </div>
                 <div className="order-1 lg:order-2 space-y-6">
-                    <h2 className="text-4xl font-serif font-bold text-[#1A374D] border-b-2 border-[#1A374D] pb-4 inline-block">
+                    <h2 className="text-4xl font-serif font-bold text-pine-teal border-b-2 border-pine-teal pb-4 inline-block">
                         Party – Corporate
                     </h2>
                     <h4 className="text-xl font-semibold text-gray-800">Inclusions & Experiences</h4>
                     <ul className="space-y-4 text-gray-600">
                         <li className="flex gap-3">
-                            <Users className="h-6 w-6 text-[#1A374D] shrink-0" />
+                            <Users className="h-6 w-6 text-pine-teal shrink-0" />
                             <span><strong>Ambience:</strong> Formal-casual balance with branded décor or informal lounge-style seating.</span>
                         </li>
                         <li className="flex gap-3">
-                            <Music className="h-6 w-6 text-[#1A374D] shrink-0" />
+                            <Music className="h-6 w-6 text-pine-teal shrink-0" />
                             <div>
                                 <strong>Entertainment:</strong>
                                 <ul className="list-disc pl-5 mt-1 space-y-1">
@@ -90,11 +90,11 @@ export default function OfferingsContent() {
                             </div>
                         </li>
                         <li className="flex gap-3">
-                            <Utensils className="h-6 w-6 text-[#1A374D] shrink-0" />
+                            <Utensils className="h-6 w-6 text-pine-teal shrink-0" />
                             <span><strong>Food & Drinks:</strong> Multi-cuisine buffet, finger foods, and cocktail bar service.</span>
                         </li>
                         <li className="flex gap-3">
-                            <Wifi className="h-6 w-6 text-[#1A374D] shrink-0" />
+                            <Wifi className="h-6 w-6 text-pine-teal shrink-0" />
                             <span><strong>Add-Ons:</strong> Wi-Fi, Projector, Photography.</span>
                         </li>
                     </ul>
@@ -111,7 +111,7 @@ export default function OfferingsContent() {
       </section>
 
       {/* Lunch & Dinner Cruise */}
-      <section className="py-24 bg-[#1A374D] text-white">
+      <section className="py-24 bg-pine-teal text-white">
          <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
@@ -122,11 +122,11 @@ export default function OfferingsContent() {
                      
                      <div className="grid sm:grid-cols-2 gap-8">
                         <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                            <h3 className="text-xl font-bold mb-3 flex items-center gap-2"><Sun className="h-5 w-5 text-yellow-400"/> Lunch</h3>
+                            <h3 className="text-xl font-bold mb-3 flex items-center gap-2"><Sun className="h-5 w-5 text-golden-bronze"/> Lunch</h3>
                              <p className="text-sm text-white/80">Sadya, Kerala seafood thali, or continental buffet with mid-day sightseeing.</p>
                         </div>
                         <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                            <h3 className="text-xl font-bold mb-3 flex items-center gap-2"><Moon className="h-5 w-5 text-blue-300"/> Dinner</h3>
+                            <h3 className="text-xl font-bold mb-3 flex items-center gap-2"><Moon className="h-5 w-5 text-golden-bronze"/> Dinner</h3>
                              <p className="text-sm text-white/80">Multi-course fine dining, sunset cruise, soft acoustic music & candle light.</p>
                         </div>
                      </div>
@@ -163,7 +163,7 @@ export default function OfferingsContent() {
          <div className="container mx-auto px-6">
              <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-6">
-                    <h2 className="text-4xl font-serif font-bold text-[#1A374D] border-b-2 border-[#1A374D] pb-4 inline-block">
+                    <h2 className="text-4xl font-serif font-bold text-pine-teal border-b-2 border-pine-teal pb-4 inline-block">
                         Party – Wedding
                     </h2>
                     <h4 className="text-xl font-semibold text-gray-800">Inclusions & Experiences</h4>
@@ -172,12 +172,12 @@ export default function OfferingsContent() {
                         Traditional Kerala performances (Kathakali, Chenda melam) and DJ/live band for after-parties.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
-                         <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-[#1A374D]">
-                            <h5 className="font-bold text-[#1A374D]">Food</h5>
+                         <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-pine-teal">
+                            <h5 className="font-bold text-pine-teal">Food</h5>
                             <p className="text-sm text-gray-600">Authentic Sadya & Custom Multi-course Menus.</p>
                          </div>
-                         <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-[#1A374D]">
-                            <h5 className="font-bold text-[#1A374D]">Magic</h5>
+                         <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-pine-teal">
+                            <h5 className="font-bold text-pine-teal">Magic</h5>
                             <p className="text-sm text-gray-600">Sunset cruise photoshoots & Flower showers.</p>
                          </div>
                 </div>
@@ -214,7 +214,7 @@ export default function OfferingsContent() {
              <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
                  <div className="grid lg:grid-cols-2">
                      <div className="p-12 space-y-8">
-                         <h3 className="text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+                         <h3 className="text-3xl font-serif font-bold text-pine-teal uppercase tracking-tight">
                              🎉 Private – Party
                          </h3>
                          
@@ -246,32 +246,32 @@ export default function OfferingsContent() {
       </section>
 
       {/* Lake Tour */}
-      <section className="py-24 bg-[#EAF6F6]">
+      <section className="py-24 bg-porcelain">
         <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500">
                       <Image src="/images/houseboat3.jpg" alt="Lake Tour" fill className="object-cover" />
                 </div>
                 <div className="space-y-6">
-                     <h2 className="text-4xl font-serif font-bold text-[#2C5F2D]">Lake Tour Experience</h2>
+                     <h2 className="text-4xl font-serif font-bold text-pine-teal">Lake Tour Experience</h2>
                      <p className="text-lg text-gray-700">
                         A scenic journey perfect for families and cultural explorers. Glide across calm waters while soaking in Kerala’s heritage.
                      </p>
                      <ul className="space-y-3 text-gray-600">
                         <li className="flex items-start gap-2">
-                            <span className="text-green-600 font-bold">•</span>
+                            <span className="text-golden-bronze font-bold">•</span>
                             <span><strong>Ambience:</strong> Relaxed, scenic seating with open decks.</span>
                         </li>
                          <li className="flex items-start gap-2">
-                            <span className="text-green-600 font-bold">•</span>
+                            <span className="text-golden-bronze font-bold">•</span>
                             <span><strong>Entertainment:</strong> Narrations on Spice trade & Backwater ecology.</span>
                         </li>
                          <li className="flex items-start gap-2">
-                            <span className="text-green-600 font-bold">•</span>
+                            <span className="text-golden-bronze font-bold">•</span>
                             <span><strong>Culture:</strong> Short films about Kerala’s traditions.</span>
                         </li>
                      </ul>
-                     <Button asChild className="bg-[#2C5F2D] text-white px-8 py-6 rounded-full hover:bg-[#1e441f] transition-all font-bold shadow-lg hover:shadow-xl group">
+                     <Button asChild className="bg-pine-teal text-white px-8 py-6 rounded-full hover:bg-pine-teal/90 transition-all font-bold shadow-lg hover:shadow-xl group">
                         <Link href="/experiences/day-cruises" className="flex items-center gap-2">
                             Explore Day Cruises <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </Link>

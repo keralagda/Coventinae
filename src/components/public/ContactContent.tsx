@@ -18,7 +18,7 @@ export default function ContactContent() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-[#1A374D]">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-pine-teal">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="container relative z-20 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 animate-fade-in-up">Contact Us</h1>
@@ -32,7 +32,7 @@ export default function ContactContent() {
             
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-               <h2 className="text-3xl font-serif font-bold text-[#1A374D] mb-6">Send us a Message</h2>
+               <h2 className="text-3xl font-serif font-bold text-pine-teal mb-6">Send us a Message</h2>
                
                {state.success ? (
                    <div className="p-6 bg-green-50 border border-green-200 rounded-lg text-center">
@@ -80,7 +80,7 @@ export default function ContactContent() {
                     <Button 
                         type="submit" 
                         disabled={isPending}
-                        className="w-full bg-[#1A374D] hover:bg-[#152e40] size-lg text-lg"
+                        className="w-full bg-pine-teal hover:bg-pine-teal/90 size-lg text-lg text-white font-bold"
                     >
                         {isPending ? (
                             <>
@@ -100,15 +100,15 @@ export default function ContactContent() {
             <div className="space-y-8">
                 {/* Contact Info Cards */}
                 <div className="grid md:grid-cols-2 gap-6">
-                     <div className="p-6 bg-[#F3F4F6] rounded-xl">
-                         <Phone className="h-8 w-8 text-[#006994] mb-4" />
-                         <h3 className="font-bold text-[#1A374D] mb-2">Phone</h3>
+                     <div className="p-6 bg-porcelain rounded-xl border border-ink-black/5">
+                         <Phone className="h-8 w-8 text-pine-teal mb-4" />
+                         <h3 className="font-bold text-pine-teal mb-2">Phone</h3>
                          <p className="text-gray-600 text-sm">9211997746</p>
                          <p className="text-gray-600 text-sm">8086868628</p>
                      </div>
-                     <div className="p-6 bg-[#F3F4F6] rounded-xl">
-                         <Mail className="h-8 w-8 text-[#006994] mb-4" />
-                         <h3 className="font-bold text-[#1A374D] mb-2">Email</h3>
+                     <div className="p-6 bg-porcelain rounded-xl border border-ink-black/5">
+                         <Mail className="h-8 w-8 text-pine-teal mb-4" />
+                         <h3 className="font-bold text-pine-teal mb-2">Email</h3>
                          <p className="text-gray-600 text-sm">rohan@coventina.net</p>
                          <p className="text-gray-600 text-sm">admin@coventina.net</p>
                      </div>
