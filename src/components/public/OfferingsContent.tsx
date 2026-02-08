@@ -93,10 +93,11 @@ export default function OfferingsContent() {
                             <Utensils className="h-6 w-6 text-[#1A374D] shrink-0" />
                             <span><strong>Food & Drinks:</strong> Multi-cuisine buffet, finger foods, and cocktail bar service.</span>
                         </li>
-                         <li className="flex gap-3">
+                        <li className="flex gap-3">
                             <Wifi className="h-6 w-6 text-[#1A374D] shrink-0" />
                             <span><strong>Add-Ons:</strong> Wi-Fi, Projector, Photography.</span>
                         </li>
+                    </ul>
                     <div className="pt-4">
                         <Button asChild variant="outline" className="border-pine-teal text-pine-teal hover:bg-pine-teal hover:text-white rounded-full group">
                             <Link href="/experiences/corporate-events" className="flex items-center gap-2">

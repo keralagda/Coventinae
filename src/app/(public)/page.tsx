@@ -256,7 +256,7 @@ export default function HomePage() {
                            Ready to plan your <span className="text-[#C5A059] block mt-2">Perfect Event?</span>
                        </h2>
                        <p className="text-lg opacity-90 max-w-lg leading-relaxed">
-                           Whether it's a corporate retreat, a wedding, or a family gathering, our expert team is here to craft an unforgettable experience tailored to your needs on the serene backwaters.
+                           Whether it&apos;s a corporate retreat, a wedding, or a family gathering, our expert team is here to craft an unforgettable experience tailored to your needs on the serene backwaters.
                        </p>
                        
                        <div className="flex flex-col sm:flex-row gap-8 pt-4">
