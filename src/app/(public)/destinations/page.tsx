@@ -9,7 +9,7 @@ const routes = [
     highlights: ["Pathiramanal Island", "Bird Sanctuary", "Kumarakom Backwaters"],
     duration: "Overnight / Day Cruise",
     description: "Experience the vastness of India's longest lake. Witness the confluence of nature and local life as you drift past ancient temples and lush mangrove forests.",
-    image: "/images/beed2.jpg",
+    image: "https://www.journeysinternational.com/wp-content/uploads/2019/05/india-river-boats.jpg",
     vibe: "Serene & Expansive"
   },
   {
@@ -17,7 +17,7 @@ const routes = [
     highlights: ["Paddy Fields", "Local Villages", "Narrow Canals"],
     duration: "2 Days / 1 Night",
     description: "Dive into the 'Venice of the East'. This route takes you through narrow canals where you can witness the unique Kuttanad farming below sea level.",
-    image: "/images/beed1.jpg",
+    image: "https://res.cloudinary.com/voyehomes/image/upload/v1760198269/property/166/image/ddf0f37f-e86f-4301-8f2d-c9be8750052f.jpg",
     vibe: "Cultural & Intimate"
   },
   {
@@ -25,7 +25,7 @@ const routes = [
     highlights: ["Chinese Fishing Nets", "Fort Kochi", "Coastal Views"],
     duration: "Day Cruise",
     description: "A perfect blend of urban history and natural beauty. Sail through the harbour to see the historic fisherman's nets as the sun sets over the Arabian Sea.",
-    image: "/images/beed3.jpg",
+    image: "https://www.fundayholidays.com/wp-content/uploads/2019/10/Cheenavala_Fort-kochi-1024x581.jpg",
     vibe: "Historic & Scenic"
   }
 ];
