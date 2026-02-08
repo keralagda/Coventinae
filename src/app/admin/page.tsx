@@ -14,8 +14,8 @@ export default function AdminDashboard() {
             <DollarSign className="h-4 w-4 text-pine-teal" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-ink-black tracking-tighter">$45,231.89</div>
-            <p className="text-xs text-muted-foreground mt-1">+20.1% from last month</p>
+            <div className="text-3xl font-bold text-ink-black tracking-tighter">$0.00</div>
+            <p className="text-xs text-muted-foreground mt-1">0% from last month</p>
           </CardContent>
         </Card>
         <Card className="border-ink-black/5 shadow-sm hover:shadow-md transition-shadow">
@@ -24,8 +24,8 @@ export default function AdminDashboard() {
             <Users className="h-4 w-4 text-pine-teal" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-ink-black tracking-tighter">+2350</div>
-            <p className="text-xs text-muted-foreground mt-1">+180.1% from last month</p>
+            <div className="text-3xl font-bold text-ink-black tracking-tighter">0</div>
+            <p className="text-xs text-muted-foreground mt-1">0% from last month</p>
           </CardContent>
         </Card>
         <Card className="border-ink-black/5 shadow-sm hover:shadow-md transition-shadow">
@@ -34,8 +34,8 @@ export default function AdminDashboard() {
             <CreditCard className="h-4 w-4 text-pine-teal" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-ink-black tracking-tighter">+12,234</div>
-            <p className="text-xs text-muted-foreground mt-1">+19% from last month</p>
+            <div className="text-3xl font-bold text-ink-black tracking-tighter">0</div>
+            <p className="text-xs text-muted-foreground mt-1">0% from last month</p>
           </CardContent>
         </Card>
         <Card className="border-ink-black/5 shadow-sm hover:shadow-md transition-shadow">
@@ -44,8 +44,8 @@ export default function AdminDashboard() {
             <Activity className="h-4 w-4 text-pine-teal" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-ink-black tracking-tighter">+573</div>
-            <p className="text-xs text-muted-foreground mt-1">+201 since last hour</p>
+            <div className="text-3xl font-bold text-ink-black tracking-tighter">0</div>
+            <p className="text-xs text-muted-foreground mt-1">No active sessions</p>
           </CardContent>
         </Card>
       </div>
@@ -69,17 +69,9 @@ export default function AdminDashboard() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="space-y-8">
-                {/* Recent sales list */}
-                <div className="flex items-center hover:bg-ink-black/5 p-2 rounded-lg transition-colors cursor-pointer">
-                    <div className="h-9 w-9 rounded-full bg-pine-teal/10 flex items-center justify-center text-pine-teal font-bold border border-pine-teal/20">
-                        OM
-                    </div>
-                    <div className="ml-4 space-y-1">
-                        <p className="text-sm font-bold text-ink-black leading-none">Olivia Martin</p>
-                        <p className="text-sm text-muted-foreground font-medium">olivia.martin@email.com</p>
-                    </div>
-                    <div className="ml-auto font-bold text-pine-teal">+$1,999.00</div>
+            <div className="space-y-8 h-full flex items-center justify-center">
+                <div className="text-center py-10">
+                    <p className="text-sm font-medium text-muted-foreground italic">No recent inquiries to display.</p>
                 </div>
             </div>
           </CardContent>

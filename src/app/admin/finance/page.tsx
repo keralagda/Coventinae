@@ -1,7 +1,5 @@
 import { 
     CreditCard, 
-    ArrowUpRight, 
-    ArrowDownRight, 
     DollarSign,
     Download,
     Activity
@@ -31,9 +29,9 @@ export default function FinancePage() {
                         <DollarSign className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$45,231.89</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$0.00</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                            <ArrowUpRight className="h-3 w-3 text-green-500" /> +20.1% from last month
+                            0% from last month
                         </p>
                     </CardContent>
                 </Card>
@@ -43,9 +41,9 @@ export default function FinancePage() {
                         <CreditCard className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">+2350</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">0</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                            <ArrowUpRight className="h-3 w-3 text-green-500" /> +180.1% from last month
+                            0% from last month
                         </p>
                     </CardContent>
                 </Card>
@@ -55,9 +53,9 @@ export default function FinancePage() {
                         <DollarSign className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$1,290.00</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$0.00</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                            <ArrowDownRight className="h-3 w-3 text-red-500" /> -4% from last month
+                            0% from last month
                         </p>
                     </CardContent>
                 </Card>
@@ -67,9 +65,9 @@ export default function FinancePage() {
                         <UsersIcon className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">+573</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">0</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                            <ArrowUpRight className="h-3 w-3 text-green-500" /> +201 since last hour
+                            Initial synchronization pending
                         </p>
                     </CardContent>
                 </Card>

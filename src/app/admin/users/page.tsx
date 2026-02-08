@@ -15,11 +15,14 @@ import {
     TableRow 
 } from "@/components/ui/table"
 
-const SAMPLE_USERS = [
-    { name: "John Doe", email: "john@example.com", role: "Admin", status: "Active" },
-    { name: "Jane Smith", email: "jane@example.com", role: "Editor", status: "Active" },
-    { name: "Bob Wilson", email: "bob@example.com", role: "Viewer", status: "Inactive" },
-]
+interface User {
+    name: string;
+    email: string;
+    role: string;
+    status: string;
+}
+
+const SAMPLE_USERS: User[] = [] // Reset to zero-state for production readiness
 
 export default function UsersPage() {
     return (
@@ -55,39 +58,47 @@ export default function UsersPage() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {SAMPLE_USERS.map((user) => (
-                            <TableRow key={user.email} className="hover:bg-porcelain/50 border-ink-black/5 transition-colors group">
-                                <TableCell className="py-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="h-9 w-9 rounded-full bg-pine-teal/10 flex items-center justify-center font-bold text-pine-teal border border-pine-teal/20 group-hover:bg-pine-teal group-hover:text-white transition-all">
-                                            {user.name[0]}
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-ink-black tracking-tight">{user.name}</div>
-                                            <div className="text-[10px] text-muted-foreground font-semibold uppercase">{user.email}</div>
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <div className="flex items-center gap-2 text-xs font-bold text-ink-black/70">
-                                        <Shield className="h-3 w-3 text-pine-teal" />
-                                        {user.role}
-                                    </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-tight shadow-sm ${
-                                        user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
-                                    }`}>
-                                        {user.status}
-                                    </span>
-                                </TableCell>
-                                <TableCell className="text-right py-4">
-                                    <Button variant="ghost" size="icon" className="hover:bg-porcelain text-ink-black/40 hover:text-pine-teal">
-                                        <MoreHorizontal className="h-4 w-4" />
-                                    </Button>
+                        {SAMPLE_USERS.length === 0 ? (
+                            <TableRow>
+                                <TableCell colSpan={4} className="h-32 text-center text-muted-foreground italic bg-porcelain/20">
+                                    No team members found. Start by adding your first user.
                                 </TableCell>
                             </TableRow>
-                        ))}
+                        ) : (
+                            SAMPLE_USERS.map((user) => (
+                                <TableRow key={user.email} className="hover:bg-porcelain/50 border-ink-black/5 transition-colors group">
+                                    <TableCell className="py-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="h-9 w-9 rounded-full bg-pine-teal/10 flex items-center justify-center font-bold text-pine-teal border border-pine-teal/20 group-hover:bg-pine-teal group-hover:text-white transition-all">
+                                                {user.name[0]}
+                                            </div>
+                                            <div>
+                                                <div className="font-bold text-ink-black tracking-tight">{user.name}</div>
+                                                <div className="text-[10px] text-muted-foreground font-semibold uppercase">{user.email}</div>
+                                            </div>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <div className="flex items-center gap-2 text-xs font-bold text-ink-black/70">
+                                            <Shield className="h-3 w-3 text-pine-teal" />
+                                            {user.role}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <span className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-tight shadow-sm ${
+                                            user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+                                        }`}>
+                                            {user.status}
+                                        </span>
+                                    </TableCell>
+                                    <TableCell className="text-right py-4">
+                                        <Button variant="ghost" size="icon" className="hover:bg-porcelain text-ink-black/40 hover:text-pine-teal">
+                                            <MoreHorizontal className="h-4 w-4" />
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            ))
+                        )}
                     </TableBody>
                 </Table>
             </div>
