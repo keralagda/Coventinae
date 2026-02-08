@@ -1,90 +1,11 @@
-"use client"
+import { Metadata } from "next"
+import ContactContent from "@/components/public/ContactContent"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Send } from "lucide-react"
+export const metadata: Metadata = {
+  title: "Contact Us | Book Your Cruise",
+  description: "Get in touch with Coventina for bookings and inquiries. Reach us via phone, email, or visit our office in Noida."
+}
 
 export default function ContactPage() {
-  return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-[#1A374D]">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <div className="container relative z-20 text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 animate-fade-in-up">Contact Us</h1>
-          <p className="text-xl md:text-2xl font-light text-white/90">Get in touch with us for your perfect getaway.</p>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
-            
-            {/* Contact Form */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-               <h2 className="text-3xl font-serif font-bold text-[#1A374D] mb-6">Send us a Message</h2>
-               <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                          <label className="text-sm font-medium text-gray-700">First Name</label>
-                          <Input placeholder="John" />
-                      </div>
-                      <div className="space-y-2">
-                          <label className="text-sm font-medium text-gray-700">Last Name</label>
-                          <Input placeholder="Doe" />
-                      </div>
-                  </div>
-                  <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Email Address</label>
-                      <Input type="email" placeholder="john@example.com" />
-                  </div>
-                   <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Message</label>
-                      <Textarea placeholder="Tell us about your trip plans..." className="min-h-[150px]" />
-                  </div>
-                  <Button className="w-full bg-[#1A374D] hover:bg-[#152e40] size-lg text-lg">
-                      <Send className="w-4 h-4 mr-2" /> Send Message
-                  </Button>
-               </form>
-            </div>
-
-            {/* Info & Map */}
-            <div className="space-y-8">
-                {/* Contact Info Cards */}
-                <div className="grid md:grid-cols-2 gap-6">
-                     <div className="p-6 bg-[#F3F4F6] rounded-xl">
-                         <Phone className="h-8 w-8 text-[#006994] mb-4" />
-                         <h3 className="font-bold text-[#1A374D] mb-2">Phone</h3>
-                         <p className="text-gray-600 text-sm">9211997746</p>
-                         <p className="text-gray-600 text-sm">8086868628</p>
-                     </div>
-                     <div className="p-6 bg-[#F3F4F6] rounded-xl">
-                         <Mail className="h-8 w-8 text-[#006994] mb-4" />
-                         <h3 className="font-bold text-[#1A374D] mb-2">Email</h3>
-                         <p className="text-gray-600 text-sm">rohan@coventina.net</p>
-                         <p className="text-gray-600 text-sm">admin@coventina.net</p>
-                     </div>
-                </div>
-
-                {/* Map */}
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-[400px] w-full relative">
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d251771.78052300418!2d76.44354817427491!3d9.60094560092737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzcnMjAuMiJOIDc2wrAyNSc0Ny42IkU!5e0!3m2!1sen!2sin!4v1740977574479!5m2!1sen!2sin"
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0"
-                  />
-                </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+  return <ContactContent />
 }

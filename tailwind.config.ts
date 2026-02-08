@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -23,14 +23,30 @@ const config = {
         serif: ['var(--font-source-serif)', 'serif'],
       },
       colors: {
+        porcelain: {
+            DEFAULT: "#F5F5F0",
+            foreground: "#121928",
+        },
+        "ink-black": {
+            DEFAULT: "#121928",
+            foreground: "#F5F5F0",
+        },
+        "golden-bronze": {
+            DEFAULT: "#C5A059",
+            foreground: "#121928",
+        },
+        "pine-teal": {
+            DEFAULT: "#004D40",
+            foreground: "#FFFFFF",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-            DEFAULT: "#1A374D", // Coventina Blue
-            foreground: "#ffffff",
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -89,7 +105,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config
 
 export default config

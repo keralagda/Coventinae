@@ -1,6 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Mail, Phone, MapPin, Calendar, Briefcase, Info } from "lucide-react"
+import { Mail, Calendar, Briefcase, Info, MapPin } from "lucide-react"
+
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Careers | Join the Coventina Team",
+  description: "Join our team at Coventina. We are currently hiring for Sales Executives in the Hospitality Industry. Check out our open positions."
+}
 
 export default function CareerPage() {
   return (
@@ -11,7 +18,7 @@ export default function CareerPage() {
         {/* Placeholder for background image if needed, or just solid color per legacy */}
         <div className="container relative z-20 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 animate-fade-in-up">Career</h1>
-          <p className="text-xl md:text-2xl font-light text-white/90">"APPLY Now – Position Open"</p>
+          <p className="text-xl md:text-2xl font-light text-white/90">&quot;APPLY Now – Position Open&quot;</p>
         </div>
       </section>
 
@@ -63,7 +70,7 @@ export default function CareerPage() {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 Our company Benevure Craft Pvt Ltd is based out of Gurgaon.
-                The word "Benevure" was coined by our founder Rohan Michael Sebastine taking two 
+                The word &quot;Benevure&quot; was coined by our founder Rohan Michael Sebastine taking two 
                 separate words, benevolent and future as a portmanteau. The boat offers luxury, peace, 
                 and comfort from the hectic rigors of everyday life as also joy and happiness from 
                 parties, marriages etc. It also has an artistically designed board room for corporate 

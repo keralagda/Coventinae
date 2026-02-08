@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Coventina AI - Luxury Houseboat Experience Platform
 
-## Getting Started
+Coventina AI is a next-generation digital platform designed for the luxury hospitality sector in Kerala. It serves as the digital front desk for **Coventina Luxury Houseboats**, offering seamless booking experiences, AI-driven content management, and robust administrative controls.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. **Public Experience**
+
+- **Immersive Landing Page:** High-performance, visually stunning UI built with **Tailwind CSS v4** and **Framer Motion**.
+- **Consultation Booking System:** Integrated connection form enabling potential clients to schedule consultations directly.
+- **Video Showcases:** Optimized video modalities to display the houseboat experience without compromising performance.
+- **Marquee Announcements:** Dynamic news ticker for real-time booking updates.
+
+### 2. **Administrative Powerhouse**
+
+- **Dashboard:** Centralized control center for managing the platform.
+- **Consultation Management (CRUD):** Full lifecycle management of booking requests (View, Status Updates, Archive, Delete).
+- **Content Studio:** (In Development) AI-powered tools for generating marketing copy and social media posts.
+
+### 3. **AI Core (Coventina Intelligence)**
+
+- **SEO Engine:** Built-in metadata optimization and sitemap generation.
+- **Analytics:** (Planned) Intelligent insights into user behavior and booking trends.
+
+---
+
+## 🛠 Tech Stack
+
+This project leverages the bleeding edge of the React ecosystem:
+
+- **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4 + Shadcn/UI
+- **Database:** PostgreSQL (via Neon DB)
+- **ORM:** Prisma
+- **Validation:** Zod + React Hook Form
+- **Icons:** Lucide React
+
+---
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / pnpm
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-repo/coventina.git
+    cd coventina
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
+
+3.  **Set up Environment Variables:**
+    Create a `.env` file in the root directory and add your database connection string:
+
+    ```env
+    DATABASE_URL="postgresql://user:password@host:port/database?sslmode=require"
+    ```
+
+4.  **Initialize Database:**
+
+    ```bash
+    npx prisma generate
+    npx prisma db push
+    ```
+
+5.  **Run Development Server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│   ├── (public)/       # Public-facing routes (Landing, About, Contact)
+│   ├── admin/          # Protected Admin Dashboard routes
+│   ├── api/            # API Route Handlers
+│   └── layout.tsx      # Root Layout
+├── components/
+│   ├── admin/          # Admin-specific components (Tables, Charts)
+│   ├── public/         # Public-facing components (Hero, Forms)
+│   └── ui/             # Reusable Shadcn UI primitives
+├── actions/            # Server Actions for backend logic
+├── lib/                # Utility functions and DB clients
+└── styles/             # Global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📄 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is proprietary software belonging to **Coventina Luxury Houseboats**. All rights reserved.
