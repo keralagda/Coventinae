@@ -38,6 +38,13 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* Brand Semantic Tokens */
+  --color-pine-teal: var(--pine-teal);
+  --color-ink-black: var(--ink-black);
+  --color-golden-bronze: var(--golden-bronze);
+  --color-porcelain: var(--porcelain);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

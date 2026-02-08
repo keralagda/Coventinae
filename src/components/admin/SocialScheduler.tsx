@@ -28,7 +28,7 @@ export function SocialScheduler() {
     <div className="grid gap-4 md:grid-cols-2">
       <Card>
         <CardHeader>
-          <CardTitle>Schedule New Post</CardTitle>
+          <CardTitle className="text-ink-black font-bold">Schedule New Post</CardTitle>
           <CardDescription>Create and schedule content for social platforms.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -54,15 +54,15 @@ export function SocialScheduler() {
                         <Button
                             variant={"outline"}
                             className={cn(
-                                "w-full justify-start text-left font-normal",
+                                "w-full justify-start text-left font-normal border-ink-black/10",
                                 !date && "text-muted-foreground"
                             )}
                         >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            <CalendarIcon className="mr-2 h-4 w-4 text-pine-teal" />
                             {date ? format(date, "PPP") : <span>Pick a date</span>}
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
+                    <PopoverContent className="w-auto p-0 border-ink-black/5 bg-white shadow-2xl">
                         <Calendar
                             mode="single"
                             selected={date}
@@ -77,13 +77,13 @@ export function SocialScheduler() {
                 <Label>Caption</Label>
                 <Textarea 
                     placeholder="Write your caption here..." 
-                    className="min-h-[150px]"
+                    className="min-h-[150px] border-ink-black/10 transition-all focus:border-pine-teal focus:ring-1 focus:ring-pine-teal"
                     value={content}
                     onChange={(e) => setContent(e.target.value)} 
                 />
             </div>
             
-            <Button className="w-full">Schedule Post</Button>
+            <Button className="w-full bg-pine-teal text-white hover:bg-pine-teal/90 shadow-lg shadow-pine-teal/20">Schedule Post</Button>
         </CardContent>
       </Card>
 

@@ -25,7 +25,7 @@ export function SEOAnalyzer() {
     <div className="grid gap-4 md:grid-cols-2">
       <Card className="col-span-1">
         <CardHeader>
-            <CardTitle>Content Input</CardTitle>
+            <CardTitle className="text-ink-black font-bold">Content Input</CardTitle>
             <CardDescription>Paste content to audit against a target keyword.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -47,7 +47,7 @@ export function SEOAnalyzer() {
                     onChange={(e) => setContent(e.target.value)}
                 />
             </div>
-            <Button onClick={handleAnalyze} className="w-full">Analyze SEO</Button>
+            <Button onClick={handleAnalyze} className="w-full bg-pine-teal text-white hover:bg-pine-teal/90 shadow-lg shadow-pine-teal/20">Analyze SEO</Button>
         </CardContent>
       </Card>
 

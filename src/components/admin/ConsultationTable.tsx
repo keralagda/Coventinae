@@ -86,63 +86,68 @@ export default function ConsultationTable({ initialData }: ConsultationTableProp
   };
 
   return (
-    <div className="rounded-md border bg-white shadow-sm overflow-hidden">
+    <div className="rounded-2xl border border-ink-black/5 bg-white shadow-xl overflow-hidden">
       <Table>
-        <TableHeader className="bg-gray-50">
-          <TableRow>
-            <TableHead className="font-bold">Client</TableHead>
-            <TableHead className="font-bold">Contact Info</TableHead>
-            <TableHead className="font-bold">Preferred Date</TableHead>
-            <TableHead className="font-bold">Message</TableHead>
-            <TableHead className="font-bold">Status</TableHead>
-            <TableHead className="font-bold text-right">Actions</TableHead>
+        <TableHeader className="bg-porcelain">
+          <TableRow className="border-ink-black/5">
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Client</TableHead>
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Contact Info</TableHead>
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Preferred Date</TableHead>
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Message</TableHead>
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Status</TableHead>
+            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px] text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {data.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={6} className="text-center py-8 text-gray-500">
-                No consultation requests found.
+              <TableCell colSpan={6} className="text-center py-12 text-muted-foreground italic">
+                No consultation requests found in the current period.
               </TableCell>
             </TableRow>
           ) : (
             data.map((item) => (
-              <TableRow key={item.id} className="hover:bg-gray-50/50">
-                <TableCell className="font-medium align-top">
-                  <div className="flex flex-col">
-                    <span className="text-base font-semibold text-gray-900">{item.name}</span>
-                    <span className="text-xs text-gray-500">{format(new Date(item.createdAt), "MMM d, yyyy")}</span>
+              <TableRow key={item.id} className="hover:bg-porcelain/50 border-ink-black/5 transition-colors group">
+                <TableCell className="font-medium align-middle py-4">
+                  <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-pine-teal/10 flex items-center justify-center text-pine-teal font-bold border border-pine-teal/20 group-hover:bg-pine-teal group-hover:text-white transition-all duration-300">
+                          {item.name[0]}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-bold text-ink-black tracking-tight">{item.name}</span>
+                        <span className="text-[10px] text-muted-foreground font-semibold uppercase">{format(new Date(item.createdAt), "MMM d, yyyy")}</span>
+                      </div>
                   </div>
                 </TableCell>
-                <TableCell className="align-top">
-                   <div className="flex flex-col gap-1 text-sm">
-                       <div className="flex items-center gap-2 text-gray-600">
-                           <Mail className="h-3 w-3" /> {item.email}
+                <TableCell className="align-middle py-4">
+                   <div className="flex flex-col gap-1 text-xs">
+                       <div className="flex items-center gap-2 text-ink-black/70 font-medium">
+                           <Mail className="h-3 w-3 text-pine-teal" /> {item.email}
                        </div>
-                       <div className="flex items-center gap-2 text-gray-600">
-                           <Phone className="h-3 w-3" /> {item.phone}
+                       <div className="flex items-center gap-2 text-ink-black/70 font-medium">
+                           <Phone className="h-3 w-3 text-pine-teal" /> {item.phone}
                        </div>
                    </div>
                 </TableCell>
-                <TableCell className="align-top text-sm">
+                <TableCell className="align-middle py-4 text-xs">
                   {item.date ? (
-                      <div className="flex items-center gap-2 text-gray-700 font-medium">
-                          <CalendarIcon className="h-3 w-3" />
+                      <div className="flex items-center gap-2 text-ink-black font-semibold bg-porcelain px-3 py-1.5 rounded-full border border-ink-black/5 w-fit">
+                          <CalendarIcon className="h-3 w-3 text-pine-teal" />
                           {format(new Date(item.date), "PPP")}
                       </div>
                   ) : (
-                    <span className="text-gray-400 italic">No date specified</span>
+                    <span className="text-gray-400 italic">Unspecified</span>
                   )}
                 </TableCell>
-                <TableCell className="align-top max-w-xs">
+                <TableCell className="align-middle py-4 max-w-xs">
                     {item.message ? (
-                        <p className="text-sm text-gray-600 line-clamp-3" title={item.message}>{item.message}</p>
+                        <p className="text-xs text-ink-black/60 font-medium line-clamp-1 group-hover:line-clamp-none transition-all" title={item.message}>{item.message}</p>
                     ) : (
-                        <span className="text-gray-400 italic text-sm">No message</span>
+                        <span className="text-gray-400 italic text-xs">No message</span>
                     )}
                 </TableCell>
-                <TableCell className="align-top">
-                  <Badge variant="outline" className={`${getStatusColor(item.status)} border px-2 py-0.5 rounded-full text-xs font-semibold`}>
+                <TableCell className="align-middle py-4">
+                  <Badge variant="outline" className={`${getStatusColor(item.status)} border-0 shadow-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight`}>
                     {item.status}
                   </Badge>
                 </TableCell>
