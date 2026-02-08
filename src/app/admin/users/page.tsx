@@ -1,10 +1,8 @@
 import { 
-    Users as UsersIcon, 
     UserPlus, 
     Search, 
     MoreHorizontal,
-    Shield,
-    Mail
+    Shield
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"

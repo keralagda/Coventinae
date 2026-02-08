@@ -62,7 +62,7 @@ export async function generateSEOKeywords(topic: string, provider: AIProvider = 
             return JSON.parse(jsonMatch[0]);
         }
         return [];
-    } catch (e) {
+    } catch (_e) {
         return [];
     }
 }
