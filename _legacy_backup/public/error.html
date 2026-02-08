@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8d7da;
+            margin: 0;
+            padding: 0;
+        }
+
+        .error-box {
+            text-align: center;
+            background: white;
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .error-box h1 {
+            color: #b71c1c;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .error-box p {
+            color: #444;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .retry-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #b71c1c;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .retry-btn:hover {
+            background: #8f1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-box">
+        <h1>Payment Failed ❌</h1>
+        <p>Something went wrong while processing your payment.</p>
+        <a href="index.html" class="retry-btn">Try Again</a>
+    </div>
+
+</body>
+</html>

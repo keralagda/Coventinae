@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Coventina</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .success-box {
+            background: #ffffff;
+            padding: 40px;
+            width: 420px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .success-box img {
+            width: 90px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0D3B66;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .payment-id {
+            background: #eef6ff;
+            border: 1px solid #c6ddff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background: #0D3B66;
+            padding: 12px 22px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #092e4d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-box">
+        <img src="https://img.icons8.com/color/96/000000/checked--v3.png" alt="Success">
+
+        <h2>Payment Successful!</h2>
+        <p>Thank you for booking with <b>Coventina Resort</b>.</p>
+
+        <p>Your Payment ID:</p>
+
+        <div class="payment-id" id="paymentId">Loading...</div>
+
+        <a href="index.html">Go to Home</a>
+    </div>
+
+    <script>
+        // Read payment ID from URL: success.html?pid=xxxx
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("paymentId").innerText = urlParams.get("pid") || "N/A";
+    </script>
+
+</body>
+</html>
