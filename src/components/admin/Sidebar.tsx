@@ -9,7 +9,6 @@ import {
   Users,
   CreditCard,
   FileText,
-  BarChart,
   Megaphone,
   Search,
   LogOut

@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { format } from "date-fns";
-import { Copy, Trash, CheckCircle, Mail, Phone, Calendar as CalendarIcon, MessageCircle } from "lucide-react";
+import { Copy, Trash, CheckCircle, Mail, Phone, Calendar as CalendarIcon } from "lucide-react";
 import { toast } from "sonner";
 import {
   Table,
@@ -40,7 +40,7 @@ interface ConsultationTableProps {
 
 export default function ConsultationTable({ initialData }: ConsultationTableProps) {
   const [data, setData] = useState(initialData);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const handleUpdateStatus = (id: string, status: string) => {
     startTransition(async () => {

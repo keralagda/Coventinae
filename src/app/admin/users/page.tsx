@@ -44,45 +44,45 @@ export default function UsersPage() {
                 <Button variant="outline">Filter</Button>
             </div>
 
-            <div className="rounded-md border bg-white">
+            <div className="rounded-2xl border border-ink-black/5 bg-white shadow-xl overflow-hidden">
                 <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>User</TableHead>
-                            <TableHead>Role</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead className="text-right">Actions</TableHead>
+                    <TableHeader className="bg-porcelain">
+                        <TableRow className="border-ink-black/5 hover:bg-transparent">
+                            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">User</TableHead>
+                            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Role</TableHead>
+                            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px]">Status</TableHead>
+                            <TableHead className="font-bold text-ink-black uppercase tracking-wider text-[10px] text-right">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {SAMPLE_USERS.map((user) => (
-                            <TableRow key={user.email}>
-                                <TableCell>
+                            <TableRow key={user.email} className="hover:bg-porcelain/50 border-ink-black/5 transition-colors group">
+                                <TableCell className="py-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-ink-black">
+                                        <div className="h-9 w-9 rounded-full bg-pine-teal/10 flex items-center justify-center font-bold text-pine-teal border border-pine-teal/20 group-hover:bg-pine-teal group-hover:text-white transition-all">
                                             {user.name[0]}
                                         </div>
                                         <div>
-                                            <div className="font-medium">{user.name}</div>
-                                            <div className="text-xs text-muted-foreground">{user.email}</div>
+                                            <div className="font-bold text-ink-black tracking-tight">{user.name}</div>
+                                            <div className="text-[10px] text-muted-foreground font-semibold uppercase">{user.email}</div>
                                         </div>
                                     </div>
                                 </TableCell>
-                                <TableCell>
-                                    <div className="flex items-center gap-2">
+                                <TableCell className="py-4">
+                                    <div className="flex items-center gap-2 text-xs font-bold text-ink-black/70">
                                         <Shield className="h-3 w-3 text-pine-teal" />
                                         {user.role}
                                     </div>
                                 </TableCell>
-                                <TableCell>
-                                    <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                                        user.status === 'Active' ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-600'
+                                <TableCell className="py-4">
+                                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-tight shadow-sm ${
+                                        user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
                                     }`}>
                                         {user.status}
                                     </span>
                                 </TableCell>
-                                <TableCell className="text-right">
-                                    <Button variant="ghost" size="icon">
+                                <TableCell className="text-right py-4">
+                                    <Button variant="ghost" size="icon" className="hover:bg-porcelain text-ink-black/40 hover:text-pine-teal">
                                         <MoreHorizontal className="h-4 w-4" />
                                     </Button>
                                 </TableCell>

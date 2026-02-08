@@ -25,70 +25,70 @@ export default function SettingsPage() {
                 </Button>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <Globe className="h-5 w-5" /> General Configuration
+            <div className="grid gap-8 md:grid-cols-2">
+                <Card className="border-ink-black/5 shadow-sm overflow-hidden">
+                    <CardHeader className="bg-porcelain border-b border-ink-black/5">
+                        <CardTitle className="flex items-center gap-2 text-ink-black font-bold">
+                            <Globe className="h-5 w-5 text-pine-teal" /> General Configuration
                         </CardTitle>
                         <CardDescription>Basic platform settings and branding.</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-6 p-6">
                         <div className="space-y-2">
-                            <Label htmlFor="siteName">Site Name</Label>
-                            <Input id="siteName" defaultValue="Coventina AI" />
+                            <Label htmlFor="siteName" className="text-xs font-bold uppercase tracking-wider text-ink-black/50">Site Name</Label>
+                            <Input id="siteName" defaultValue="Coventina AI" className="border-ink-black/10 focus:border-pine-teal focus:ring-1 focus:ring-pine-teal" />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="contactEmail">Contact Email</Label>
-                            <Input id="contactEmail" defaultValue="contact@coventina.ai" />
+                            <Label htmlFor="contactEmail" className="text-xs font-bold uppercase tracking-wider text-ink-black/50">Contact Email</Label>
+                            <Input id="contactEmail" defaultValue="contact@coventina.ai" className="border-ink-black/10 focus:border-pine-teal focus:ring-1 focus:ring-pine-teal" />
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <Key className="h-5 w-5" /> API Integrations
+                <Card className="border-ink-black/5 shadow-sm overflow-hidden">
+                    <CardHeader className="bg-porcelain border-b border-ink-black/5">
+                        <CardTitle className="flex items-center gap-2 text-ink-black font-bold">
+                            <Key className="h-5 w-5 text-pine-teal" /> API Integrations
                         </CardTitle>
                         <CardDescription>Manage your AI provider keys.</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-6 p-6">
                         <div className="space-y-2">
-                            <Label htmlFor="openaiKey">OpenAI API Key</Label>
-                            <Input id="openaiKey" type="password" value="••••••••••••••••" readOnly />
+                            <Label htmlFor="openaiKey" className="text-xs font-bold uppercase tracking-wider text-ink-black/50">OpenAI API Key</Label>
+                            <Input id="openaiKey" type="password" value="••••••••••••••••" readOnly className="bg-porcelain border-ink-black/5 font-mono text-xs" />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="cerebrasKey">Cerebras API Key</Label>
-                            <Input id="cerebrasKey" type="password" value="••••••••••••••••" readOnly />
+                            <Label htmlFor="cerebrasKey" className="text-xs font-bold uppercase tracking-wider text-ink-black/50">Cerebras API Key</Label>
+                            <Input id="cerebrasKey" type="password" value="••••••••••••••••" readOnly className="bg-porcelain border-ink-black/5 font-mono text-xs" />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="mistralKey">Mistral API Key</Label>
-                            <Input id="mistralKey" type="password" value="••••••••••••••••" readOnly />
+                            <Label htmlFor="mistralKey" className="text-xs font-bold uppercase tracking-wider text-ink-black/50">Mistral API Key</Label>
+                            <Input id="mistralKey" type="password" value="••••••••••••••••" readOnly className="bg-porcelain border-ink-black/5 font-mono text-xs" />
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <Bell className="h-5 w-5" /> Notifications
+                <Card className="border-ink-black/5 shadow-sm overflow-hidden opacity-80 grayscale-[0.5]">
+                    <CardHeader className="bg-porcelain border-b border-ink-black/5">
+                        <CardTitle className="flex items-center gap-2 text-ink-black font-bold">
+                            <Bell className="h-5 w-5 text-pine-teal" /> Notifications
                         </CardTitle>
                         <CardDescription>Manage system and email alerts.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <p className="text-sm text-muted-foreground italic">Notification preferences coming soon...</p>
+                    <CardContent className="p-6">
+                        <p className="text-sm text-muted-foreground italic bg-porcelain p-4 rounded-xl border border-dashed border-ink-black/10">Notification preferences coming soon...</p>
                     </CardContent>
                 </Card>
 
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <ShieldCheck className="h-5 w-5" /> Security
+                <Card className="border-ink-black/5 shadow-sm overflow-hidden opacity-80 grayscale-[0.5]">
+                    <CardHeader className="bg-porcelain border-b border-ink-black/5">
+                        <CardTitle className="flex items-center gap-2 text-ink-black font-bold">
+                            <ShieldCheck className="h-5 w-5 text-pine-teal" /> Security
                         </CardTitle>
                         <CardDescription>RBAC and platform security settings.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <p className="text-sm text-muted-foreground italic">Security modules are under development.</p>
+                    <CardContent className="p-6">
+                        <p className="text-sm text-muted-foreground italic bg-porcelain p-4 rounded-xl border border-dashed border-ink-black/10">Security modules are under development.</p>
                     </CardContent>
                 </Card>
             </div>
