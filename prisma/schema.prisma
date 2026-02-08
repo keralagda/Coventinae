@@ -7,12 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  USER
-  ADMIN
-  EDITOR
-}
-
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -20,12 +14,11 @@ model User {
   emailVerified DateTime?
   image         String?
   role          Role      @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
   accounts      Account[]
-  sessions      Session[]
   posts         Post[]
-  
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  sessions      Session[]
 }
 
 model Account {
@@ -40,12 +33,10 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
- 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@id([provider, providerAccountId])
 }
 
@@ -53,42 +44,39 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model VerificationToken {
   identifier String
   token      String
   expires    DateTime
- 
+
   @@id([identifier, token])
 }
 
 model Post {
-  id        String   @id @default(cuid())
-  title     String
-  slug      String   @unique
-  content   String   // Markdown or HTML
-  published Boolean  @default(false)
-  authorId  String
-  author    User     @relation(fields: [authorId], references: [id])
-  
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  content        String
+  published      Boolean  @default(false)
+  authorId       String
   seoTitle       String?
   seoDescription String?
-  keywords       String[] // AI generated keywords
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  keywords       String[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  author         User     @relation(fields: [authorId], references: [id])
 }
 
 model SEOAudit {
   id        String   @id @default(cuid())
   url       String
   score     Int
-  report    Json     // Detailed report data
+  report    Json
   createdAt DateTime @default(now())
 }
 
@@ -98,21 +86,21 @@ model ContactInquiry {
   lastName  String
   email     String
   message   String
-  status    String   @default("PENDING") // PENDING, READ, REPLIED
+  status    String   @default("PENDING")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Consultation {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String
   email     String
   phone     String
   date      DateTime?
   message   String?
-  status    String   @default("PENDING") // PENDING, CONTACTED, BOOKED, ARCHIVED
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  status    String    @default("PENDING")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model Media {
@@ -124,8 +112,14 @@ model Media {
   format    String?
   width     Int?
   height    Int?
-  type      String?  // image, video
+  type      String?
   folder    String?  @default("website")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+  EDITOR
 }

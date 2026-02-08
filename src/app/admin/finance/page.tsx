@@ -1,6 +1,6 @@
 import { 
     CreditCard, 
-    DollarSign,
+    IndianRupee, 
     Download,
     Activity
 } from "lucide-react"
@@ -26,10 +26,10 @@ export default function FinancePage() {
                 <Card className="border-ink-black/5 shadow-sm">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-bold text-ink-black uppercase tracking-tight">Total Revenue</CardTitle>
-                        <DollarSign className="h-4 w-4 text-pine-teal" />
+                        <IndianRupee className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$0.00</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">₹0.00</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
                             0% from last month
                         </p>
@@ -50,10 +50,10 @@ export default function FinancePage() {
                 <Card className="border-ink-black/5 shadow-sm">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-bold text-ink-black uppercase tracking-tight">Avg Order Value</CardTitle>
-                        <DollarSign className="h-4 w-4 text-pine-teal" />
+                        <IndianRupee className="h-4 w-4 text-pine-teal" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-bold text-ink-black tracking-tighter">$0.00</div>
+                        <div className="text-3xl font-bold text-ink-black tracking-tighter">₹0.00</div>
                         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
                             0% from last month
                         </p>
