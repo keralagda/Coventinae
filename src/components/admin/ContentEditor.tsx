@@ -1,5 +1,7 @@
 "use client"
 
+import { toast } from "sonner"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,8 +27,14 @@ export function ContentEditor() {
   const [provider, setProvider] = useState<AIProvider>("openai")
 
   const handleGenerate = async () => {
-    if (!topic) return
+    if (!topic) {
+        toast.error("Please enter a topic first.")
+        return
+    }
     setLoading(true)
+    setGeneratedContent("")
+    setKeywords([])
+    
     try {
       // 1. Generate Keywords
       const kwRes = await fetch("/api/ai/generate", {
@@ -34,7 +42,15 @@ export function ContentEditor() {
         body: JSON.stringify({ type: "keywords", topic, provider }),
       })
       const kwData = await kwRes.json()
-      if (kwData.result) setKeywords(kwData.result)
+      
+      if (kwData.error) {
+        throw new Error(kwData.error)
+      }
+      
+      if (kwData.result) {
+          setKeywords(kwData.result)
+          toast.success("Keywords generated successfully!")
+      }
 
       // 2. Generate Content
       const prompt = `Write a comprehensive, SEO-optimized blog post about "${topic}". Use the following keywords: ${kwData.result?.join(", ")}. Format in Markdown.`
@@ -43,10 +59,20 @@ export function ContentEditor() {
         body: JSON.stringify({ type: "text", prompt, provider }),
       })
       const textData = await textRes.json()
-      if (textData.result) setGeneratedContent(textData.result)
+      
+      if (textData.error) {
+        throw new Error(textData.error)
+      }
 
-    } catch (error) {
+      if (textData.result) {
+          setGeneratedContent(textData.result)
+          toast.success("Content generated successfully!")
+      }
+
+    } catch (error: unknown) {
       console.error("Generation failed", error)
+      const errorMessage = error instanceof Error ? error.message : "Failed to generate content. Please check your API keys."
+      toast.error(errorMessage)
     } finally {
       setLoading(false)
     }

@@ -11,13 +11,12 @@ const connectionString = process.env.DATABASE_URL!;
 export const sql = neon(connectionString);
 
 // 2. Prisma Client with Neon Adapter (Type-safe and optimized)
-const sqlClient = neon(connectionString);
-const adapter = new PrismaNeon(sqlClient);
+const adapter = new PrismaNeon({ connectionString });
 
 declare global {
   var prisma: PrismaClient | undefined;
 }
 
-export const db = globalThis.prisma || new PrismaClient({ adapter });
+export const db = globalThis.prisma || new PrismaClient({ adapter } as any);
 
 if (process.env.NODE_ENV !== "production") globalThis.prisma = db;

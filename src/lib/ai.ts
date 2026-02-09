@@ -47,9 +47,9 @@ export async function generateText(
         });
 
         return completion.choices[0].message.content;
-    } catch (error) {
+    } catch (error: any) {
         console.error(`AI Generation Error (${provider}):`, error);
-        throw new Error(`Failed to generate content with ${provider}.`);
+        throw new Error(`Failed to generate content with ${provider}: ${error.message || "Unknown error"}`);
     }
 }
 

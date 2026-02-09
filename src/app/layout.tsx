@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import "@/app/globals.css";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${sourceSerif.variable} antialiased`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );
